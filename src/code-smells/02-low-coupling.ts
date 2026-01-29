@@ -5,18 +5,21 @@
   type Gender = 'M' | 'F';
 
   interface PersonProps {
-    name: string;
+    firstName: string;
+    lastName: string;
     gender: Gender;
     birthdate: Date;
   }
 
   class Person {
-    public name: string;
+    public firstName: string;
+    public lastName: string;
     public gender: Gender;
     public birthdate: Date;
 
-    constructor({ name, gender, birthdate }: PersonProps) {
-      this.name = name;
+    constructor({ firstName, lastName, gender, birthdate }: PersonProps) {
+      this.firstName = firstName;
+      this.lastName = lastName;
       this.gender = gender;
       this.birthdate = birthdate;
     }
@@ -26,6 +29,7 @@
     email: string;
     role: string;
   }
+
   class User {
     public email: string;
     public role: string;
@@ -61,33 +65,30 @@
   interface UserSettingsProps {
     birthdate: Date;
     email: string;
+    firstName: string;
     gender: Gender;
     lastFolderOpen: string;
-    name: string;
+    lastName: string;
     role: string;
     workingDirectory: string;
   }
 
   class UserSettings {
-    // constructor(
-    //     public person: Person,
-    //     public user  : User,
-    //     public settings: Settings,
-    // ){}
     public person: Person;
     public user: User;
     public settings: Settings;
 
     constructor({
-      name,
-      gender,
       birthdate,
       email,
+      firstName,
+      gender,
+      lastFolderOpen,
+      lastName,
       role,
       workingDirectory,
-      lastFolderOpen,
     }: UserSettingsProps) {
-      this.person = new Person({ name, gender, birthdate });
+      this.person = new Person({ firstName, lastName, gender, birthdate });
       this.user = new User({ email, role });
       this.settings = new Settings({ workingDirectory, lastFolderOpen });
     }
@@ -96,9 +97,10 @@
   const userSettings = new UserSettings({
     birthdate: new Date('1985-10-21'),
     email: 'fernando@google.com',
+    firstName: 'Fernando',
     gender: 'M',
     lastFolderOpen: '/home',
-    name: 'Fernando',
+    lastName: 'Herrera',
     role: 'Admin',
     workingDirectory: '/usr/home',
   });
