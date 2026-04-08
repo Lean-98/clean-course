@@ -1,4 +1,4 @@
-import type { HttpClient } from '../02-open-close-c';
+import type { HttpClient } from './02-open-close-c';
 // import axios from 'axios';
 
 export class TodoService {
