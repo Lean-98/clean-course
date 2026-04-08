@@ -1,4 +1,4 @@
-import { WebApiPostService, JsonDataBaseService } from './ 05-dependency-c';
+import { WebApiPostService, JsonDataBaseService } from './05-dependency-c';
 import { PostService } from './05-dependency-b';
 
 // Main

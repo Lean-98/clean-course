@@ -2,7 +2,7 @@ import {
   JsonDataBaseService,
   LocalDataBaseService,
   type PostProvider,
-} from './ 05-dependency-c';
+} from './05-dependency-c';
 
 export interface Post {
   body: string;
